@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: cee-tender-intelligence-v5
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: DB_PATH
+        value: /tmp/cee_tenders.db
+      - key: PROZORRO_API_BASE
+        value: https://public-api.prozorro.gov.ua/api/2.5
+      - key: TED_API_BASE
+        value: https://api.ted.europa.eu/v3/notices/search
+      - key: BZP_API_BASE
+        value: https://ezamowienia.gov.pl/mo-board/api/v1/notice
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
