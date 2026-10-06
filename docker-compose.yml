@@ -1,9 +1,0 @@
-services:
-  tender-intelligence:
-    build: .
-    restart: unless-stopped
-    ports: ["8000:8000"]
-    env_file: .env
-    volumes: ["tender_data:/data"]
-volumes:
-  tender_data:
